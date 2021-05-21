@@ -1,12 +1,14 @@
 ![image](https://user-images.githubusercontent.com/63486672/119204908-992b5700-ba4b-11eb-80d4-5450cf4d48b4.png)
 
-## 🪐 Golang WIP POC botnet written for practice
+## 🪐 Golang WIP POC Windows botnet written for practice
+##### *Say THAT five times fast..*
 ### Features
+* Built for target and control via Windows OS ⌨️
 * Unencrypted IRC communications 🐶
 * Powershell command execution 🐚
 * Mass (all bots) or targeted control 🚀
 * Built to utilize freenode, can be tweaked to use TOR 🦊
-
+##### *Only can target windows, the master MIGHT be able to run on linux*
 ## 📝 Installation
 
 After installing [golang](https://golang.org/doc/install), use go to fetch the required dependencies
