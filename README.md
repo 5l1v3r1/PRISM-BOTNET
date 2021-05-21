@@ -7,23 +7,35 @@
 After installing [golang](https://golang.org/doc/install), use go to fetch the required dependencies
 
 ```bash
-sudo crystal build --release main.cr -o whitecat
-sudo chmod +x setup.sh
-./setup.sh
+go get github.com/gianarb/go-irc
+go get gopkg.in/sorcix/irc.v2
 ```
+## 👽 Configuration
+
+You may keep the defaults, or change your desired Mastername and channel name
+#### To edit the bot.go file
+| ![image](https://user-images.githubusercontent.com/63486672/119205486-30dd7500-ba4d-11eb-8c47-ca1d89aca6f5.png)
+| :------: |
+#### To edit the master.go file
+| ![image](https://user-images.githubusercontent.com/63486672/119205280-b44a9680-ba4c-11eb-9c1b-b05896176602.png) |
+| :------: |
+Ensure that both channels match between these files before compilation
+
+## 🌔 Compilation
 Afterwards, compile, or simply run prism.go to generate the bot and master stub for your system
 ```bash
-sudo go build prism.go
-///OR
-sudo go run prism.go
+go build prism.go -o prism.exe
+/// Or, to skip compilation
+go run prism.go
 ```
-❗ Note, if compiling, the prism.exe file must be ran from a terminal window (powershell/cmd)
+❗ Note, if compiling, the produced prism.exe file must be ran from a terminal window (powershell/cmd)
 
 ## :octocat: Usage
-Simply run the master.exe from within a terminal
+To view or control bots, simply run the master.exe from within a terminal
 
 ```bash
 ./master.exe
 ```
+Type '?' to view built in help commands from the master.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
