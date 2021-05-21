@@ -1,6 +1,11 @@
-| ![image](https://user-images.githubusercontent.com/63486672/119204908-992b5700-ba4b-11eb-80d4-5450cf4d48b4.png) |
-| :------: |
-🪐 Golang WIP POC botnet written for practice
+![image](https://user-images.githubusercontent.com/63486672/119204908-992b5700-ba4b-11eb-80d4-5450cf4d48b4.png)
+
+## 🪐 Golang WIP POC botnet written for practice
+### Features
+* Unencrypted IRC communications 🐶
+* Powershell command execution 🐚
+* Mass (all bots) or targeted control 🚀
+* Built to utilize freenode, can be tweaked to use TOR 🦊
 
 ## 📝 Installation
 
@@ -12,14 +17,14 @@ go get gopkg.in/sorcix/irc.v2
 ```
 ## 👽 Configuration
 
-You may keep the defaults, or change your desired Mastername and channel name
+You may keep the defaults, or change your desired master name and channel name
 #### To edit the bot.go file
 | ![image](https://user-images.githubusercontent.com/63486672/119205486-30dd7500-ba4d-11eb-8c47-ca1d89aca6f5.png)
 | :------: |
 #### To edit the master.go file
 | ![image](https://user-images.githubusercontent.com/63486672/119205280-b44a9680-ba4c-11eb-9c1b-b05896176602.png) |
 | :------: |
-Ensure that both channels match between these files before compilation
+##### Ensure that both channels match between these files before compilation
 
 ## 🌔 Compilation
 Afterwards, compile, or simply run prism.go to generate the bot and master stub for your system
