@@ -20,16 +20,16 @@ import (
 )
 
 /* #######################################
-##### CHANGE THIS FOR YOUR IRC SERVER ####
+##### CHANGE THIS TO YOUR IRC SERVER ####
 ########################################*/
-var serverGlobal string = "##merlinsmagic"
-var botnameGlobal string = "CABBasterOfEVIL"
+var serverGlobal string = "##NotABotNet"
+var botnameGlobal string = "NotTheMaster"
 
 //Globals
 var targetGlobal string = "None Selected"
 var connectedGlobal bool = false
 var botlistGlobal string = ""
-var PROMPT string = "\033[0;35m" + " PRISM > " + "\033[0m"
+var PROMPT string = "\033[0;93m" + " PRISM > " + "\033[0m"
 
 
 func clearScreen() {
@@ -51,7 +51,7 @@ func green() {
 }
 
 func magenta() {
-	fmt.Printf("\033[0;35m");
+	fmt.Printf("\033[0;93m");
   }
 
 func reset() {
@@ -206,10 +206,14 @@ func main() {
 							fmt.Println("[~] Current mass commands")
 							reset()
 							fmt.Println("    [start, shutdown]", "\n")
+							red()
+							fmt.Println("[~] Current master commands")
+							reset()
+							fmt.Println("    [quit, help, ?]", "\n")
 							green()
 							fmt.Printf("[!]")
 							reset()
-							fmt.Printf(" For detailed info, run: help [command]")
+							fmt.Printf(" For detailed info, run: help [command] after a target is selected")
 							fmt.Println("\n")
 						} else if result == "clear" {
 							banner()
