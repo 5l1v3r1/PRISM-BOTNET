@@ -22,14 +22,14 @@ import (
 /* #######################################
 ##### CHANGE THIS TO YOUR IRC SERVER ####
 ########################################*/
-var serverGlobal string = "##myserver"
+var serverGlobal string = "##merlinsmagic"
 var botnameGlobal string = "NotTheMaster"
 
 //Globals
 var targetGlobal string = "None Selected"
 var connectedGlobal bool = false
 var botlistGlobal string = ""
-var PROMPT string = "\033[0;93m" + " PRISM > " + "\033[0m"
+var PROMPT string = "\033[1;91m" + " PRISM " + "\033[0m" + "> "
 
 
 func clearScreen() {
@@ -43,14 +43,14 @@ func clearLine() {
 }
 
 func red() {
-  fmt.Printf("\033[1;31m");
+  fmt.Printf("\033[1;91m");
 }
 
 func green() {
-  fmt.Printf("\033[0;32m");
+  fmt.Printf("\033[0;92m");
 }
 
-func magenta() {
+func yellow() {
 	fmt.Printf("\033[0;93m");
   }
 
@@ -193,7 +193,7 @@ func main() {
 							conn.Close()
 						} else if result == "?" || result == "help" {
 							banner()
-							magenta()
+							yellow()
 							fmt.Println("[?] Use the 'target' command to select recipient")
 							reset()
 							fmt.Println("    Single bot selection: target 'botname'")
@@ -209,7 +209,7 @@ func main() {
 							green()
 							fmt.Println("[~] Current master commands")
 							reset()
-							fmt.Println("    [quit, help, ?]", "\n")
+							fmt.Println("    [quit, help, ?, clear]", "\n")
 						} else if result == "clear" {
 							banner()
 						} else if result == "target" {

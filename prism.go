@@ -28,11 +28,11 @@ func clearScreen() {
 }
 
 func red() {
-  fmt.Printf("\033[1;31m");
+  fmt.Printf("\033[1;91m");
 }
 
 func green() {
-  fmt.Printf("\033[0;32m");
+  fmt.Printf("\033[0;92m");
 }
 
 func reset() {

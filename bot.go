@@ -20,7 +20,7 @@ import (
 )
 
 // SET YOUR IRC CHANNEL NAME
-var CHANNEL_NAME string = "##yourchannel"
+var CHANNEL_NAME string = "##merlinsmagic"
 
 /* ##############################
 #### Split string into slice ####
