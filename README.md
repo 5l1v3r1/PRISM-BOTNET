@@ -46,7 +46,7 @@ To view or control bots, simply run the master.exe from within a terminal
 ```bash
 ./master.exe
 ```
-| ![image](https://user-images.githubusercontent.com/63486672/119207755-312d3e80-ba54-11eb-9826-24b0090114bd.png) |
+| ![image](https://user-images.githubusercontent.com/63486672/119274294-07932500-bbc4-11eb-9572-e345004ec7bf.png) |
 | :------: |
 🙊 🙈 🙉
 ## License
