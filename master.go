@@ -22,7 +22,7 @@ import (
 /* #######################################
 ##### CHANGE THIS TO YOUR IRC SERVER ####
 ########################################*/
-var serverGlobal string = "##merlinsmagic"
+var serverGlobal string = "##myserver"
 var botnameGlobal string = "NotTheMaster"
 
 //Globals
