@@ -22,7 +22,7 @@ import (
 /* #######################################
 ##### CHANGE THIS TO YOUR IRC SERVER ####
 ########################################*/
-var serverGlobal string = "##NotABotNet"
+var serverGlobal string = "##merlinsmagic"
 var botnameGlobal string = "NotTheMaster"
 
 //Globals
@@ -206,15 +206,10 @@ func main() {
 							fmt.Println("[~] Current mass commands")
 							reset()
 							fmt.Println("    [start, shutdown]", "\n")
-							red()
+							green()
 							fmt.Println("[~] Current master commands")
 							reset()
 							fmt.Println("    [quit, help, ?]", "\n")
-							green()
-							fmt.Printf("[!]")
-							reset()
-							fmt.Printf(" For detailed info, run: help [command] after a target is selected")
-							fmt.Println("\n")
 						} else if result == "clear" {
 							banner()
 						} else if result == "target" {

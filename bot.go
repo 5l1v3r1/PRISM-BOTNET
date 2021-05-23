@@ -20,7 +20,7 @@ import (
 )
 
 // SET YOUR IRC CHANNEL NAME
-var CHANNEL_NAME string = "##NotABotNet"
+var CHANNEL_NAME string = "##merlinsmagic"
 
 /* ##############################
 #### Split string into slice ####
@@ -488,72 +488,6 @@ func ircloop() {
 							conn.Close()
 							break
 							// End of switch
-					}
-				case "?","help","HELP":
-					if len(msgArray) == 1 {
-						bot.Send(fmt.Sprint(banner + "///> " + msgArray[0]))
-						msg := "[!] Help usage: help [command]"
-						msg2 := "[~] Current targeted commands: [ls, cd, pwd, info, shutdown]"
-						msg3 := "[~] Current mass commands: [start, shutdown]"
-						bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
-						bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
-						bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
-						bot.Send(fmt.Sprint(banner + "<///"))
-					} else if len(msgArray) == 2 {
-						// Print menu
-						switch msgArray[1] {
-						case "ls", "LS", "dir", "DIR":
-							msg := "[?] ls/dir: Golang implimentation"
-							msg2 := "[?] Arguements: none supported"
-							msg3 := "[?] Notes: use start for advanced ls"
-							//fmt.Println(msg)
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
-						case "cd", "CD":
-							msg := "[?] cd: Golang implimentation of native cd"
-							msg2 := "[?] Arguements: one required  [Ex. cd Desktop]"
-							msg3 := "[?] Notes: Not ran via cmd, updates pwd automatically"
-							//fmt.Println(msg)
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
-						case "pwd", "PWD":
-							msg := "[?] pwd: Golang implimentation of native pwd"
-							msg2 := "[?] Arguements: none"
-							msg3 := "[?] Notes: shows golang stubs pwd"
-							//fmt.Println(msg)
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
-						case "info", "INFO":
-							msg := "[?] info: Grabs windows hostname and version"
-							msg2 := "[?] Arguements: none"
-							msg3 := "[?] Notes: Alerts if curl is possibly installed"
-							//fmt.Println(msg)
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
-						case "start", "START":
-							msg := "[?] start: runs start via cmd"
-							msg2 := "[?] Arguements: at least one [Ex. start notepad.exe]"
-							msg3 := "[?] Notes: Some programs require full paths for input files"
-							msg4 := "[?] WMPLAYER: Full Path"
-							//fmt.Println(msg)
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
-							bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg4))
-						}
-						bot.Send(fmt.Sprint(banner + "<///"))
-					} else {
-						msg := "[!] Help usage: help [command]"
-						msg2 := "[~] Current targeted commands: [ls, cd, pwd, info, shutdown]"
-						msg3 := "[~] Current mass commands: [start, shutdown]"
-						bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg))
-						bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg2))
-						bot.Send(fmt.Sprint("PRIVMSG " + CHANNEL_NAME + " :" + msg3))
-						bot.Send(fmt.Sprint(banner + "<///"))
 					}
 				}
 			}
